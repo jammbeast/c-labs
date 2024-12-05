@@ -1,0 +1,14 @@
+C:\Users\admin\Desktop\labs\BookingSystem\bin\Debug\net9.0\BookingSystem.exe
+C:\Users\admin\Desktop\labs\BookingSystem\bin\Debug\net9.0\BookingSystem.deps.json
+C:\Users\admin\Desktop\labs\BookingSystem\bin\Debug\net9.0\BookingSystem.runtimeconfig.json
+C:\Users\admin\Desktop\labs\BookingSystem\bin\Debug\net9.0\BookingSystem.dll
+C:\Users\admin\Desktop\labs\BookingSystem\bin\Debug\net9.0\BookingSystem.pdb
+C:\Users\admin\Desktop\labs\BookingSystem\obj\Debug\net9.0\BookingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Desktop\labs\BookingSystem\obj\Debug\net9.0\BookingSystem.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\labs\BookingSystem\obj\Debug\net9.0\BookingSystem.AssemblyInfo.cs
+C:\Users\admin\Desktop\labs\BookingSystem\obj\Debug\net9.0\BookingSystem.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\labs\BookingSystem\obj\Debug\net9.0\BookingSystem.dll
+C:\Users\admin\Desktop\labs\BookingSystem\obj\Debug\net9.0\refint\BookingSystem.dll
+C:\Users\admin\Desktop\labs\BookingSystem\obj\Debug\net9.0\BookingSystem.pdb
+C:\Users\admin\Desktop\labs\BookingSystem\obj\Debug\net9.0\BookingSystem.genruntimeconfig.cache
+C:\Users\admin\Desktop\labs\BookingSystem\obj\Debug\net9.0\ref\BookingSystem.dll
