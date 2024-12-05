@@ -3,75 +3,52 @@ using system.Collections.Generic;
 
 namespace KuhnyaSerialSts.Models{
     public class Dish{
-        int id {get; set;}
-        string name {get; set;} 
-        string description {get; set;}
-        string weight {get; set;}
+        public int Id {get; set;}
+        public string Name {get; set;} 
+        public string Composition {get; set;}
+        public string Weight {get; set;}
         
-        double price {get; set;}
-        public enum Category
-        {
-            Напиток,
-            Салат,
-            Холодная закуска,
-            Горячая закуска,
-            Суп,
-            Основное блюдо,
-            Десерт
+        public double Cost {get; set;}
+        public Category Category { get; set; }
+        public int TimeToCook {get; set;}
+        public string[] Type` { get; set; }
+
+        //статическое поле, хранящее количество блюд
+        public static int DishCounter { get; private set}
+
+        public Dish(int id, string name, string composition, string weight, double cost, Category category, int timeToCook, string[] type){
+            Id = id;
+            Name = name;
+            Composition = composition;
+            Weight = weight;
+            Cost = cost;
+            Category = category;
+            TimeToCook = timeToCook;
+            Type = type;
+            DishCounter++;
         }
-        int timeToCook {get; set;}
-        string[] types { get; set; }
-        
-        Category category { get; set; }
-
-
-
-        public void CreateDish(in int id, in string name, in string description, in string weight, in double price, in int timeToCook, params string[] types, in Category category){
-            this.id = id;
-            this.name = name;
-            this.description = description;
-            this.weight = weight;
-            this.price = price;
-            this.timeToCook = timeToCook;
-            this.types = types;
-            this.category = category;
-            this.types = types;
-
-    }
-
-        public void EditDish(in int id, in string name, in string description, in string weight, in double price, in int timeToCook, params string[] types, in Category category){
-            this.id = id;
-            this.name = name;
-            this.description = description;
-            this.weight = weight;
-            this.price = price;
-            this.timeToCook = timeToCook;
-            this.types = types;
-            this.category = category;
-            this.types = types;
+        public void EditDish(string newName, string newComposition, string newWeight, double newCost, Category newCategory, int newTimeToCook, string[] newType){
+            Name = newName;
+            Composition = newComposition;
+            Weight = newWeight;
+            Cost = newCost;
+            Category = newCategory;
+            TimeToCook = newTimeToCook;
+            Type = newType;
         }
-
-        public void DisplayDish(){
-            Console.WriteLine($"ID: {id}");
-            Console.WriteLine($"Название: {name}");
-            Console.WriteLine($"Описание: {description}");
-            Console.WriteLine($"Вес: {weight}");
-            Console.WriteLine($"Цена: {price}");
-             Console.WriteLine($"Категория: {category}");
-            Console.WriteLine($"Время приготовления: {timeToCook}");
-            Console.WriteLine($"Типы: {string.Join(", ", types)}");
-           
+        public void PrintDish(){
+            Console.WriteLine($"Id: {Id}");
+            Console.WriteLine($"Name: {Name}");
+            Console.WriteLine($"Composition: {Composition}");
+            Console.WriteLine($"Weight: {Weight}");
+            Console.WriteLine($"Cost: {Cost}");
+            Console.WriteLine($"Category: {Category}");
+            Console.WriteLine($"Time to cook: {TimeToCook}");
+            Console.WriteLine($"Type: {string.join(", ", type)}");
         }
-
         public void DeleteDish(){
-            id = 0;
-            name = "";
-            description = "";
-            weight = "";
-            price = 0;
-            timeToCook = 0;
-            types = null;
-            category = 0;
+            DishCounter--;
         }
+        
     }
 }
