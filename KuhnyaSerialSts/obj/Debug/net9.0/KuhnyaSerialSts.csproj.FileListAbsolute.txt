@@ -1,0 +1,15 @@
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\bin\Debug\net9.0\KuhnyaSerialSts.exe
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\bin\Debug\net9.0\KuhnyaSerialSts.deps.json
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\bin\Debug\net9.0\KuhnyaSerialSts.runtimeconfig.json
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\bin\Debug\net9.0\KuhnyaSerialSts.dll
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\bin\Debug\net9.0\KuhnyaSerialSts.pdb
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\obj\Debug\net9.0\KuhnyaSerialSts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\obj\Debug\net9.0\KuhnyaSerialSts.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\obj\Debug\net9.0\KuhnyaSerialSts.AssemblyInfo.cs
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\obj\Debug\net9.0\KuhnyaSerialSts.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\obj\Debug\net9.0\KuhnyaSerialSts.sourcelink.json
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\obj\Debug\net9.0\KuhnyaSerialSts.dll
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\obj\Debug\net9.0\refint\KuhnyaSerialSts.dll
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\obj\Debug\net9.0\KuhnyaSerialSts.pdb
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\obj\Debug\net9.0\KuhnyaSerialSts.genruntimeconfig.cache
+C:\Users\admin\Desktop\labs\KuhnyaSerialSts\obj\Debug\net9.0\ref\KuhnyaSerialSts.dll

@@ -31,11 +31,15 @@ class Program
         {
             Console.WriteLine("x Бронь (Анна, 13:00 - 14:00, 50000) (Ошибка Время занято)");
         }
+        else 
+        {
+            Console.WriteLine("+ Бронь (Анна, 13:00 - 14:00, 50000)");
+        }
 
         Console.WriteLine("Тест 5: Бронь (Анна, 16:00 - 17:00)");
         if (!table1.BookTable(booking2.StartTime, booking2.EndTime, $"{booking2.ClientName} (ID: {booking2.ClientId}, Телефон: {booking2.ClientPhone})"))
         {
-            Console.WriteLine("x Бронь (Анна, 13:00 - 14:00, 50000) (Ошибка Время занято)");
+            Console.WriteLine("x Бронь (Анна, 16:00 - 17:00, 50000) (Ошибка Время занято)");
         }
         else 
         {

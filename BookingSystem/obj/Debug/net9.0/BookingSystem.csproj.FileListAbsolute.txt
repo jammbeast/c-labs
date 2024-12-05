@@ -12,3 +12,4 @@ C:\Users\admin\Desktop\labs\BookingSystem\obj\Debug\net9.0\refint\BookingSystem.
 C:\Users\admin\Desktop\labs\BookingSystem\obj\Debug\net9.0\BookingSystem.pdb
 C:\Users\admin\Desktop\labs\BookingSystem\obj\Debug\net9.0\BookingSystem.genruntimeconfig.cache
 C:\Users\admin\Desktop\labs\BookingSystem\obj\Debug\net9.0\ref\BookingSystem.dll
+C:\Users\admin\Desktop\labs\BookingSystem\obj\Debug\net9.0\BookingSystem.sourcelink.json
