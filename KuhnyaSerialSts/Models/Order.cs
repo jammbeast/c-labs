@@ -1,16 +1,16 @@
-using system;
-using system.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
 namespace KuhnyaSerialSts.Models{
 
     class Order{
 
         public int Id {get; set;}
-        public string TableId {get; set;}
+        public int TableId {get; set;}
         public List<Dish> Dishes {get; set;}
         public string comment {get; set;}
         public DateTime TimeOfOrder {get; set;}
-        public string WaiterId {get; set;}
+        public int WaiterId {get; set;}
         public DateTime? TimeOfServe {get; set;}
         public double TotalCost {get; set;}
 
@@ -33,9 +33,14 @@ namespace KuhnyaSerialSts.Models{
             TotalCost += dish.Cost;
         }
     }
-    public void EditOrder(ref List<Dish> newDishes){
+    public bool EditOrder( List<Dish> newDishes){
+        if (TimeOfServe != null){
+            return false;
+        }
+
         Dishes = newDishes;
         TotalCost = Dishes.Sum(b => b.Cost);
+        return true;
     }
 
     public void PrintInformation(){
@@ -51,7 +56,7 @@ namespace KuhnyaSerialSts.Models{
         Console.WriteLine($"Итоговая стоимость: {TotalCost} руб.");
     }
     public void CloseOrder (){
-        TimeOfServe = Date.Time.Now;
+        TimeOfServe = DateTime.Now;
     }
 
     public void CheckPojaluista(){
@@ -80,5 +85,7 @@ namespace KuhnyaSerialSts.Models{
         }
         Console.WriteLine($"\n\t\tИтог счета: {TotalCost} руб.");
         Console.WriteLine("************************************************");
+    }
+
     }
     }

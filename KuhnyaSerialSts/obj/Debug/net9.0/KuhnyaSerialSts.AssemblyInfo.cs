@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KuhnyaSerialSts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f014c81b2f587c0379e7c842b2819ed0983005c6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f8b2e5cdcd99e470d8a19fc2e75bb167f57d3e2")]
 [assembly: System.Reflection.AssemblyProductAttribute("KuhnyaSerialSts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KuhnyaSerialSts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,7 +1,13 @@
-using system;
-using system.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
 namespace KuhnyaSerialSts.Models{
+
+    public enum Category{
+        Soups,
+        Drinks,
+        Deserts
+    }
     public class Dish{
         public int Id {get; set;}
         public string Name {get; set;} 
@@ -10,11 +16,11 @@ namespace KuhnyaSerialSts.Models{
         
         public double Cost {get; set;}
         public Category Category { get; set; }
-        public int TimeToCook {get; set;}
-        public string[] Type` { get; set; }
+        public int TimeToCook { get; set;}
+        public string[] Type { get; set; }
 
         //статическое поле, хранящее количество блюд
-        public static int DishCounter { get; private set}
+        public static int DishCounter { get; private set;}
 
         public Dish(int id, string name, string composition, string weight, double cost, Category category, int timeToCook, string[] type){
             Id = id;
@@ -37,18 +43,27 @@ namespace KuhnyaSerialSts.Models{
             Type = newType;
         }
         public void PrintDish(){
-            Console.WriteLine($"Id: {Id}");
+            Console.WriteLine("=====================");
             Console.WriteLine($"Name: {Name}");
-            Console.WriteLine($"Composition: {Composition}");
-            Console.WriteLine($"Weight: {Weight}");
-            Console.WriteLine($"Cost: {Cost}");
+            Console.WriteLine($"Cost: {Cost:C}");
             Console.WriteLine($"Category: {Category}");
-            Console.WriteLine($"Time to cook: {TimeToCook}");
-            Console.WriteLine($"Type: {string.join(", ", type)}");
+            Console.WriteLine($"Type: {string.Join(", ", Type)}");
+            Console.WriteLine("=====================");
         }
-        public void DeleteDish(){
+        // static void PrintDishForTest(){
+        //     Console.WriteLine("=====================");
+        //     Console.WriteLine($"Name: {Name}");
+        //     Console.WriteLine($"Cost: {Cost:C}");
+        //     Console.WriteLine($"Category: {Category}");
+        //     Console.WriteLine($"Type: {string.Join(", ", Type)}");
+        //     Console.WriteLine("=====================");
+        // }
+            public void DeleteDish(){
             DishCounter--;
         }
+        }
+        
         
     }
-}
+    
+
