@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace KuhnyaSerialSts.Models{
 
     public enum Category{
-        Soups,
-        Drinks,
-        Deserts
+        СУПЫ,
+        НАПИТКИ,
+        ДЕСЕРТЫ
     }
     public class Dish{
         public int Id {get; set;}

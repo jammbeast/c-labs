@@ -4,10 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-    Dish soup1 = new Dish(1, "Суп1", "Картофель, морковь", "250г", 150.0, Category.Soups, 15, new string[] { "вегетарианское" });
-    Dish soup2 = new Dish(2, "Суп2", "Говядина, лук," , "300г", 200, Category.Soups, 20, new string[] { "" });
-    Dish drink1 = new Dish(3, "Кока Кола", "Газированная вода, сахар", "200мл", 50.0, Category.Drinks, 0, new string[] { "безалкогольное" });
-    Dish desert1 = new Dish(4, "Мороженое", "Молоко, сахар", "100г", 100.0, Category.Deserts, 0, new string[] { "детское" });
+    Dish soup1 = new Dish(1, "Суп1", "Картофель, морковь", "250г", 150.0, Category.СУПЫ, 15, new string[] { "вегетарианское" });
+    Dish soup2 = new Dish(2, "Суп2", "Говядина, лук," , "300г", 200, Category.СУПЫ, 20, new string[] { "" });
+    Dish drink1 = new Dish(3, "Кока Кола", "Газированная вода, сахар", "200мл", 50.0, Category.НАПИТКИ, 0, new string[] { "безалкогольное" });
+    Dish desert1 = new Dish(4, "Мороженое", "Молоко, сахар", "100г", 100.0, Category.ДЕСЕРТЫ, 0, new string[] { "детское" });
 
     Console.WriteLine("1) Блюда Созданы (+)");
 
