@@ -57,7 +57,7 @@ class Program
     Console.WriteLine("Чек закрыт (+)");
 
     Console.WriteLine("\n9) Изменение Заказа:");
-    Dish drink2 = new Dish(5, "Напиток2", "Яблочный сок", "200мл", 60.0, Category.Drinks, 5, new string[] { "веганское" });
+    Dish drink2 = new Dish(5, "Напиток2", "Яблочный сок", "200мл", 60.0, Category.НАПИТКИ, 5, new string[] { "веганское" });
     bool change = order.EditOrder(new List<Dish> {soup1, drink2});
     if (!change){
         Console.WriteLine("Заказ закрыт, изменение невозможно");
