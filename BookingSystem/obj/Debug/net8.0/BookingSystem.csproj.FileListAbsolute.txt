@@ -1,0 +1,15 @@
+/workspaces/c-labs/BookingSystem/bin/Debug/net8.0/BookingSystem
+/workspaces/c-labs/BookingSystem/bin/Debug/net8.0/BookingSystem.deps.json
+/workspaces/c-labs/BookingSystem/bin/Debug/net8.0/BookingSystem.runtimeconfig.json
+/workspaces/c-labs/BookingSystem/bin/Debug/net8.0/BookingSystem.dll
+/workspaces/c-labs/BookingSystem/bin/Debug/net8.0/BookingSystem.pdb
+/workspaces/c-labs/BookingSystem/obj/Debug/net8.0/BookingSystem.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/c-labs/BookingSystem/obj/Debug/net8.0/BookingSystem.AssemblyInfoInputs.cache
+/workspaces/c-labs/BookingSystem/obj/Debug/net8.0/BookingSystem.AssemblyInfo.cs
+/workspaces/c-labs/BookingSystem/obj/Debug/net8.0/BookingSystem.csproj.CoreCompileInputs.cache
+/workspaces/c-labs/BookingSystem/obj/Debug/net8.0/BookingSystem.sourcelink.json
+/workspaces/c-labs/BookingSystem/obj/Debug/net8.0/BookingSystem.dll
+/workspaces/c-labs/BookingSystem/obj/Debug/net8.0/refint/BookingSystem.dll
+/workspaces/c-labs/BookingSystem/obj/Debug/net8.0/BookingSystem.pdb
+/workspaces/c-labs/BookingSystem/obj/Debug/net8.0/BookingSystem.genruntimeconfig.cache
+/workspaces/c-labs/BookingSystem/obj/Debug/net8.0/ref/BookingSystem.dll

@@ -5,12 +5,12 @@ namespace BookingSystem.Models
 {
     public class Table
     {
-        public int Id { get; set; }                // Уникальный идентификатор стола
+        public int Id { get; set; }                // id стола
         public string Location { get; set; }       // Расположение стола
         public int Seats { get; set; }             // Количество мест
-        public Dictionary<string, string> Schedule { get; set; } = new Dictionary<string, string>(); // Расписание занятости по часам
+        public Dictionary<string, string> Schedule { get; set; } = new Dictionary<string, string>(); // Расписание 
 
-        // Изменение информации стола;
+       
         public void UpdateTableInfo(string location, int seats)
         {
             if (Schedule.Count == 0)
@@ -25,7 +25,6 @@ namespace BookingSystem.Models
             }
         }
 
-        // Вывод информа о столе
         public void PrintTableInfo()
         {
             Console.WriteLine($"ID: {Id}");
