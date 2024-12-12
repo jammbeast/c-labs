@@ -26,7 +26,7 @@ class Program
     Console.WriteLine("\n3) Заказ создан (+)");
 
     Console.WriteLine("\n4) Печать Чека : ");
-    order.PrintInformation();
+    order.CheckPojaluista();
     Console.WriteLine("(0)");
 
     Console.WriteLine("\n5) Количество заказов выполненых официантом:");
@@ -68,7 +68,7 @@ class Program
     Console.WriteLine("(x)");
 
     Console.WriteLine("\n10) Печать Чека : ");
-    order.PrintInformation();
+    order.CheckPojaluista();
     Console.WriteLine("(+)");
 
     Console.WriteLine("\n10) Повтор повторения пунктов 5,6,7 с обновленными данными:");

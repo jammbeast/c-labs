@@ -56,7 +56,13 @@ namespace KuhnyaSerialSts.Models{
         Console.WriteLine($"Итоговая стоимость: {TotalCost} руб.");
     }
     public void CloseOrder (){
-        TimeOfServe = DateTime.Now;
+        if (Dishes == null || Dishes.Count == 0){
+            Console.WriteLine("Заказ не содержит блюд");
+            return;
+        }
+        int maxCookTIme =Dishes.Max(dish => dish.TimeToCook);
+
+        TimeOfServe = TimeOfOrder.AddMinutes(maxCookTIme);
     }
 
     public void CheckPojaluista(){
