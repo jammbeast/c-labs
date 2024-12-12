@@ -92,6 +92,6 @@ namespace KuhnyaSerialSts.Models{
         Console.WriteLine($"\n\t\tИтог счета: {TotalCost} руб.");
         Console.WriteLine("************************************************");
     }
-
+//
     }
     }
