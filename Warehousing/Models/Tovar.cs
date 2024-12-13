@@ -2,16 +2,16 @@ using System;
 namespace Warehousing.Models{
 public class Tovar
 {
-    public int Id {get; set; }
-    public int IdOfProvider {get; set; }
+    public int Id {get; private set; }
+    public int IdOfProvider {get; private set; }
 
-    public string Name {get; set; }
+    public string Name {get; private set; }
 
-    public double Amount {get; set; }
+    public double Amount {get; private set; }
 
-    public double Price {get; set; }
+    public double Price {get; private set; }
 
-    public int DaysToExpire {get; set; }
+    public int DaysToExpire {get; private set; }
 
 
 

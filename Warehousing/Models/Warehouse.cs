@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 namespace Warehousing.Models{
 public class WareHouse{
-    public int WareHouseId {get; set; }
-    public string Type {get; set; }
-    public double WareHouseVolume {get; set; }
-    public string Address {get; set; }
-    public List<Tovar> Tovars {get; set; }
+    public int WareHouseId {get; private set; }
+    public string Type {get; private set; }
+    public double WareHouseVolume {get; private set; }
+    public string Address {get; private set; }
+    
+    public IReadOnlyList<Tovar> Tovars => _tovars.AsReadOnly();
+    private List<Tovar> _tovars;
 
 
     public WareHouse(int wareHouseId, string type, double wareHouseVolume, string address, List<Tovar> tovars){
@@ -14,7 +16,7 @@ public class WareHouse{
         Type = type;
         WareHouseVolume = wareHouseVolume;
         Address = address;
-        Tovars = new List<Tovar>();
+        _tovars = new List<Tovar>();
     }
     
     public void WareHouseEdit(string type, double wareHouseVolume, string address)
@@ -38,7 +40,7 @@ public class WareHouse{
     {
         if (WareHouseVolume >= tovar.Amount)
         {
-            Tovars.Add(tovar);
+            _tovars.Add(tovar);
             WareHouseVolume -= tovar.Amount;
         }
         else
@@ -51,7 +53,7 @@ public class WareHouse{
     public void RemoveTovar(Tovar tovar)
     {
         if (Tovars.Contains(tovar)){
-            Tovars.Remove(tovar);
+            _tovars.Remove(tovar);
             WareHouseVolume += tovar.Amount;
             Console.WriteLine($"Товар {tovar.Name} удален со склада {WareHouseId}");
         }
