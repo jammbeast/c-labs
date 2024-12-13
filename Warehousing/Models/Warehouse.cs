@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using Warehousing.Models;
-
+namespace Warehousing.Models{
 public class WareHouse{
-    public int id WareHouseId {get ; set }
-    public string Type {get ; set }
-    public double WareHouseVolume {get ; set }
-    public string Address {get ; set }
-    public List<Tovar> Tovars {get ; set }
+    public int WareHouseId {get; set; }
+    public string Type {get; set; }
+    public double WareHouseVolume {get; set; }
+    public string Address {get; set; }
+    public List<Tovar> Tovars {get; set; }
 
 
     public WareHouse(int wareHouseId, string type, double wareHouseVolume, string address, List<Tovar> tovars){
@@ -27,7 +26,7 @@ public class WareHouse{
 
     public void WareHouseInfo()
     {
-        Console.WriteLine("Id: " + Id);
+        Console.WriteLine("Id: " + WareHouseId);
         Console.WriteLine("Тип: " + Type);
         Console.WriteLine("Объем склада: " + WareHouseVolume);
         Console.WriteLine("Адрес: " + Address);
@@ -42,6 +41,14 @@ public class WareHouse{
 
     public void RemoveTovar(Tovar tovar)
     {
-        Tovars.Remove(tovar);
+        if (Tovars.Contains(tovar)){
+            Tovars.Remove(tovar);
+            WareHouseVolume += tovar.Amount;
+            Console.WriteLine($"Товар {tovar.Name} удален со склада {WareHouseId}");
+        }
+        else {
+            Console.WriteLine($"Товар {tovar.Name} не найден на складе {WareHouseId}");
+        }
     }   
+}
 }

@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KuhnyaSerialSts", "KuhnyaSe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingSystem", "BookingSystem\BookingSystem.csproj", "{43004DA1-E458-4BF0-9A15-93AD8245F0AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test5lab", "Test5lab\Test5lab.csproj", "{386A5227-1D69-44E3-BD1F-E8563D436B31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{43004DA1-E458-4BF0-9A15-93AD8245F0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43004DA1-E458-4BF0-9A15-93AD8245F0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43004DA1-E458-4BF0-9A15-93AD8245F0AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{386A5227-1D69-44E3-BD1F-E8563D436B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{386A5227-1D69-44E3-BD1F-E8563D436B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{386A5227-1D69-44E3-BD1F-E8563D436B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{386A5227-1D69-44E3-BD1F-E8563D436B31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
