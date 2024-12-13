@@ -85,7 +85,7 @@ public static class Delivery{
         foreach (var wareHouse in wareHouses){
             List<Tovar> ExpiredTovars = new List<Tovar>();
             foreach (var tovar in wareHouse.Tovars){
-                if (tovar.DaysToExpire == 0){
+                if (tovar.DaysToExpire < 0){
                     ExpiredTovars.Add(tovar);
                 }
             }
@@ -99,20 +99,76 @@ public static class Delivery{
 
 }
 
-    public static void Analisis(List<WareHouse> wareHouses){
-        foreach (var wareHouse in wareHouses){
-            bool violation = false;
-            foreach (var tovar in wareHouse.Tovars){
-                if (tovar.DaysToExpire < 0){
-                    violation = true;
-                    Console.WriteLine($"Склад ID {wareHouse.WareHouseId}: Нарушения есть");
-                Console.WriteLine("Необходимо провести перемещение товаров с истекшим сроком годности на склад утилизации.");
-                break;
+    public static void Analisis(List<WareHouse> wareHouses) //самый крутой метод imo 
+{
+    foreach (var wareHouse in wareHouses)
+    {
+        bool violation = false;
+        List<string> violationMessages = new List<string>();
+
+        foreach (var tovar in wareHouse.Tovars)
+        {
+            string targetWarehouseType = string.Empty;
+
+            if (tovar.DaysToExpire < 0)
+            {
+                // Товары с истекшим сроком годности должны перемещаться на склад утилизации
+                targetWarehouseType = "Утилизация";
+            }
+            else if (wareHouse.Type == "Общий" && tovar.DaysToExpire < 30 && tovar.DaysToExpire >= 0)
+            {
+                // Холодные товары на общем складе должны перемещаться на холодильный склад
+                targetWarehouseType = "Холодильник";
+            }
+            else if (wareHouse.Type == "Холодильник" && tovar.DaysToExpire >= 30)
+            {
+                // Товары с большим сроком годности на холодильном складе могут требовать перемещения на общий склад
+                targetWarehouseType = "Общий";
+            }
+            else if (wareHouse.Type == "Сортировочный" && tovar.DaysToExpire >= 30)
+            {
+                // Нарушения на сортировочном складе требуют перемещения на склад утилизации
+                targetWarehouseType = "Общий";
+            }
+            else if  (wareHouse.Type == "Сортировочный" && tovar.DaysToExpire < 0)
+            {
+                // Нарушения на сортировочном складе требуют перемещения на склад утилизации
+                targetWarehouseType = "Утилизация";
+            }
+            else if (wareHouse.Type == "Сортировочный" && tovar.DaysToExpire < 30 && tovar.DaysToExpire >= 0)
+            {
+                // Нарушения на сортировочном складе требуют перемещения на холодильный склад
+                targetWarehouseType = "Холодильник";
+            }
+
+            if (!string.IsNullOrEmpty(targetWarehouseType))
+            {
+                violation = true;
+                
+                var targetWarehouse = wareHouses.FirstOrDefault(w => w.Type == targetWarehouseType);
+                if (targetWarehouse != null)
+                {
+                    violationMessages.Add($"Товар \"{tovar.Name}\" (ID: {tovar.Id}) на складе \"{wareHouse.Type}\" (ID: {wareHouse.WareHouseId}) должен быть перемещён на склад \"{targetWarehouse.Type}\" (ID: {targetWarehouse.WareHouseId}).");
+                }
+                else
+                {
+                    violationMessages.Add($"Товар \"{tovar.Name}\" (ID: {tovar.Id}) на складе \"{wareHouse.Type}\" (ID: {wareHouse.WareHouseId}) требует перемещения, но целевой склад \"{targetWarehouseType}\" не найден.");
                 }
             }
-            if (!violation){
-                Console.WriteLine($"Склад ID {wareHouse.WareHouseId}: Нарушений нет");
+        }
+
+        if (violation)
+        {
+            Console.WriteLine($"Склад ID: {wareHouse.WareHouseId} ({wareHouse.Type}): Нарушения есть");
+            foreach (var message in violationMessages)
+            {
+                Console.WriteLine(message);
             }
+        }
+        else
+        {
+            Console.WriteLine($"Склад ID: {wareHouse.WareHouseId} ({wareHouse.Type}): Нарушений нет");
+        }
     }
 }
 
@@ -121,5 +177,6 @@ public static class Delivery{
         foreach (var tovar in wareHouse.Tovars){
             totalCost += tovar.Price;
         }
+        Console.WriteLine($"Общая стоимость товаров на складе {wareHouse.WareHouseId}: {totalCost}");
     }
 }}
