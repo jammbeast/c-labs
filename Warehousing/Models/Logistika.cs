@@ -24,7 +24,10 @@ public static class Delivery{
                 }
 
                 if (wareHouse.WareHouseVolume >= shipmentVolume){
-                    wareHouse.Tovars.AddRange(shipment);
+                    foreach (var tovar in shipment)
+                    {
+                        wareHouse.AddTovar(tovar);
+                    }
 
                     Console.WriteLine("Поставка товаров направлена на склад ID {0}", wareHouse.WareHouseId);
 
@@ -41,12 +44,20 @@ public static class Delivery{
 
     public static void OptimizationOfTOvarsDelivery(List<WareHouse> wareHouses){
             foreach (var wareHouse in wareHouses){
-                if (wareHouse.Type == "сортировочный"){
+                if (wareHouse.Type == "Сортировочный"){
                     List<Tovar> ToRemove = new List<Tovar>();
                     foreach (var tovar in wareHouse.Tovars)
                     {
-                        string typeOfWareHouseDestination = tovar.DaysToExpire >= 30 ? "Общий" : "Холодильник"; 
-                        var wareHouseDestination = wareHouses.Find(w =>w.Type == typeOfWareHouseDestination && w.WareHouseVolume >= tovar.Amount);
+                        string typeOfWareHouseDestination;
+                        if (tovar.DaysToExpire < 0)
+                        {
+                            typeOfWareHouseDestination = "Утилизация";
+                        }
+                        else
+                        {
+                            typeOfWareHouseDestination = tovar.DaysToExpire >= 30 ? "Общий" : "Холодильник";
+                        }
+                        var wareHouseDestination = wareHouses.Find(w => w.Type == typeOfWareHouseDestination && w.WareHouseVolume >= tovar.Amount);
                         if (wareHouseDestination != null){
                             wareHouseDestination.AddTovar(tovar);
                             ToRemove.Add(tovar);
@@ -57,6 +68,7 @@ public static class Delivery{
                     foreach (var tovar in ToRemove){
                         wareHouse.RemoveTovar(tovar);
                     }
+                    Console.WriteLine("Оптимизация перемещения товаров завершена.");
                 }
             }
     }

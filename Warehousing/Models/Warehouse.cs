@@ -36,7 +36,16 @@ public class WareHouse{
 
     public void AddTovar(Tovar tovar)
     {
-        Tovars.Add(tovar);
+        if (WareHouseVolume >= tovar.Amount)
+        {
+            Tovars.Add(tovar);
+            WareHouseVolume -= tovar.Amount;
+        }
+        else
+        {
+            Console.WriteLine($"Недостаточно места на складе {WareHouseId} для добавления товара {tovar.Name}");
+            return;
+        }
     }
 
     public void RemoveTovar(Tovar tovar)
