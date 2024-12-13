@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingSystem", "BookingSys
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test5lab", "Test5lab\Test5lab.csproj", "{386A5227-1D69-44E3-BD1F-E8563D436B31}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warehousing", "Warehousing\Warehousing.csproj", "{94A4BDC7-35F6-4414-93C6-55645D6593EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{386A5227-1D69-44E3-BD1F-E8563D436B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{386A5227-1D69-44E3-BD1F-E8563D436B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{386A5227-1D69-44E3-BD1F-E8563D436B31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94A4BDC7-35F6-4414-93C6-55645D6593EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94A4BDC7-35F6-4414-93C6-55645D6593EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94A4BDC7-35F6-4414-93C6-55645D6593EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94A4BDC7-35F6-4414-93C6-55645D6593EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
