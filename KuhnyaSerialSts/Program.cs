@@ -22,8 +22,9 @@ class Program
     Console.WriteLine("(+)");
 
     Order order = new Order(1,10,1);
-    order.AddDish(soup1, drink1, desert1);
+    order.AddDish(soup1, soup1, drink1, desert1);
     Console.WriteLine("\n3) Заказ создан (+)");
+    order.PrintInformation();
 
     Console.WriteLine("\n4) Печать Чека : ");
     order.CheckPojaluista();
