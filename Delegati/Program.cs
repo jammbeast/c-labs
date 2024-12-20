@@ -1,80 +1,38 @@
 ﻿using System;
 
-class Program
-{
-    // Определяем делегат для сравнения двух строк
-    delegate int StringComparer(string s1, string s2);
+public class Program{
 
-    static void Main(string[] args)
-    {
-        string[] strings = { "Еврей", "Серб", "Немец", "Француз", "Русский", "Узбек" };
+    public static void Main(){
+        string[] strings = new string[] {"еврей", "турок", "серб", "русский", "француз", "немец", "виноград", "амэриканец", "китаец", "японец"};
+        
 
-        Console.WriteLine("Выберите способ сортировки:");
-        Console.WriteLine("1 - длина строки");
-        Console.WriteLine("2 - алфавит");
-        Console.WriteLine("3 - По количеству гласных букв в строке");
-        int choice = int.Parse(Console.ReadLine());
+        Console.WriteLine("способ сортировки:");
 
-        StringComparer comparer = null;
+        Console.WriteLine("1. По длине строки");
+        Console.WriteLine("2. По алфавиту");
+        Console.WriteLine("3. По количеству гласных букв");
+        var choice = Console.ReadLine();
 
-        switch (choice)
-        {
-            case 1:
-                comparer = CompareByLength;
+        ComparisonDelegate comparison = null;
+
+
+        switch(choice){
+            case "1":
+                comparison = StringComparison.compareByLength;
                 break;
-            case 2:
-                comparer = CompareAlphabetically;
+            case "2":
+                comparison = StringComparison.CompareByAlphabet;
                 break;
-            case 3:
-                comparer = CompareByVowelCount;
-                break;
+
             default:
-                Console.WriteLine("Некорректный выбор");
-                return;
+                comparison = StringComparison.CompareByVowelCount;
+                break;
         }
+        StringSorter.SortStrings(strings, comparison);
 
-        // Сортируем массив с использованием выбранного делегата
-        Array.Sort(strings, (s1, s2) => comparer(s1, s2));
-
-        Console.WriteLine("\nОтсортированный массив:");
-        foreach (string s in strings)
-        {
-            Console.WriteLine(s);
+        Console.WriteLine("Отсортированный массив:");
+        foreach (var str in strings){
+            Console.WriteLine(str);
         }
-    }
-
-    // Метод для сравнения по длине строки
-    static int CompareByLength(string s1, string s2)
-    {
-        return s1.Length.CompareTo(s2.Length);
-    }
-
-    // Метод для алфавитного сравнения
-    static int CompareAlphabetically(string s1, string s2)
-    {
-        return s1.CompareTo(s2);
-    }
-
-    // Метод для сравнения по количеству гласных букв
-    static int CompareByVowelCount(string s1, string s2)
-    {
-        int vowels1 = CountVowels(s1);
-        int vowels2 = CountVowels(s2);
-        return vowels1.CompareTo(vowels2);
-    }
-
-    // Метод для подсчета гласных букв в строке
-    static int CountVowels(string s)
-    {
-        int count = 0;
-        string vowels = "аеёиоуыэюяAEЁИОУЫЭЮЯ";
-        foreach (char c in s)
-        {
-            if (vowels.Contains(c))
-            {
-                count++;
-            }
-        }
-        return count;
     }
 }

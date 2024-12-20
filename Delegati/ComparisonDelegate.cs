@@ -1,0 +1,1 @@
+public delegate int ComparisonDelegate(string x, string y);
